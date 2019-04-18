@@ -65,7 +65,7 @@ for index, row in df.iterrows():
         # Converts a float to date
         def convertExcelDate(inputDate):
             try:
-                # Toss out the decimal section because we don't care about the itme
+                # Toss out the decimal section because we don't care about that granular of time
                 excel_date = int(inputDate.split(".")[0])
                 dt = datetime.fromordinal(datetime(1900, 1, 1).toordinal() + int(excel_date) - 2)
                 hour, minute, second = floatHourToTime(excel_date % 1)
